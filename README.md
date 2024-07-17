@@ -3,3 +3,5 @@
 ## tailwind
 
 ## shadcn/ui
+
+## prisma
