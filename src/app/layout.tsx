@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/shared/ui/utils'
 import './globals.css'
+import { AppProvider } from './_providers/app-provider'
 
 export const metadata: Metadata = {
   title: 'LMS on NextJS',
@@ -22,9 +23,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
-        {children}
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   )
